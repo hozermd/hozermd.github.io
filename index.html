@@ -566,3 +566,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+<script>
+	// Accordion: aynı anda sadece 1 tanesi açık kalsın
+	document.querySelectorAll('#work .acc details').forEach(d => {
+		d.addEventListener('toggle', () => {
+			if (!d.open) return;
+			document.querySelectorAll('#work .acc details').forEach(other => {
+				if (other !== d) other.open = false;
+			});
+		});
+	});
+</script>
